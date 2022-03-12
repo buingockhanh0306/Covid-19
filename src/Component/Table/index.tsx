@@ -36,7 +36,7 @@ function Table() {
     }
     return (
         <div>
-            <input className='input-search' onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setSearch(e.target.value)} type="text" placeholder='Tìm kiếm...'/>
+            <input className='input-search' onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setSearch(e.target.value)} type="text" placeholder='Nhập tên tỉnh/thành phố...'/>
             <table className="table center">
                 <thead className='table-dark'>
                     <tr>

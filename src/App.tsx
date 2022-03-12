@@ -6,9 +6,11 @@ import Tag from './Component/Tag';
 
 function App() {
   return (
-    <div className="App">
-      <Tag/>
-      <Table/>
+    <div className="container-fluid">
+        <Tag />
+      <div className='row'>
+        <Table />
+      </div>
     </div>
   );
 }

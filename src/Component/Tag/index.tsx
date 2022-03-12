@@ -8,10 +8,12 @@ interface IProps {
         recovered: number,
         deceased: number,
         treated: number
-    }[]
+    }
 }
+
+
 function Tag() {
-    const [covid, setCovid] = useState<IProps["covid"]>([])
+    const [covid, setCovid] = useState<IProps["covid"]>()
 
     const getCovids = async () => {
         const covids = await covidAPI.getAll()
@@ -20,39 +22,35 @@ function Tag() {
 
     useEffect(() => { getCovids() }, [])
 
-    const renderCovid = () => {
-        return covid.map((cv, index) => (
-            <>
-                <div className="col tag bg-warning bg-gradient">
+    const renderCovid = () => (
+            <div className='row justify-content-center'>
+                <div className="col-md-3 col-sm-12 tag bg-warning bg-gradient">
                     <p className='title'>Tổng số ca nhiễm</p>
-                    <span className='number'>5448935</span>
+                    <span className='number'>{covid?.infected}</span>
                 </div>
 
-                <div className="col tag bg-success bg-gradient">
+                <div className="col-md-3 col-sm-12 tag bg-success bg-gradient">
                     <p className='title'>Tổng số ca đã phục hồi</p>
-                    <span className='number'></span>
-
+                    <span className='number'>{covid?.recovered}</span>
                 </div>
 
-                <div className="col tag bg-danger bg-gradient">
+                <div className="col-md-3 col-sm-12 tag bg-danger bg-gradient">
                     <p className='title'>Tổng số ca không qua khỏi</p>
-                    <span className='number'></span>
-
+                    <span className='number'>{covid?.deceased}</span>
                 </div>
 
-                <div className="col tag bg-info bg-gradient">
+                <div className="col-md-3 col-sm-12 tag bg-info bg-gradient">
                     <p className='title'>Tổng số ca đang điều trị</p>
-                    <span className='number'></span>
-
+                    <span className='number'>{covid?.treated}</span>
                 </div>
-            </>
-        ))
-    }
+            </div>
+        
+    )
     return (
         <div className="container">
             <h1>Thông tin ca bệnh</h1>
             <div className="row gx-5">
-                {renderCovid}
+                {renderCovid()}
             </div>
         </div>
     );
