@@ -12,3 +12,9 @@ h1{
 .center{
     text-align: center;
 }
+.date
+{
+    display: block;
+    margin: 20px 40px;
+    font-weight: 600;
+}
