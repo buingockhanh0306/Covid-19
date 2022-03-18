@@ -9,17 +9,17 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Navbar from './Component/Organisms/Navbar';
 import Contact from './Component/Page/Contact';
 import News from './Component/Page/News';
 import Information from './Component/Page/Information';
+import Layout from './Component/Page/LayOut';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Navbar/>}>
+            <Route path='/' element={<Layout/>}>
               <Route path='/' element={<App/>}/>
               <Route path='/news' element={<News/>}/>
               <Route path='/information' element={<Information/>}/>

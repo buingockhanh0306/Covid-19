@@ -5,6 +5,7 @@ import { IProps } from '../Tag';
 import 'moment/locale/vi'
 import moment from 'moment'
 import {numberWithCommas} from '../Tag';
+import ClipLoader from "react-spinners/ClipLoader";
 
 moment.locale('vi')
 
@@ -16,10 +17,12 @@ type Search = Pick<IProps, "search">
 function Table() {
     const [covid, setCovid] = useState<Detail["detail"]>([])
     const [search, setSearch] = useState<Search["search"]>("")
+    const [loading, setLoading] = useState<boolean>(true)
 
     const getCovids = async () => {
         const covids = await covidAPI.getAll()
         setCovid(covids.data.detail)
+        setLoading(false)
     }
 
     useEffect(() => { getCovids() }, [])
@@ -35,10 +38,12 @@ function Table() {
             </tr>
         ) : "")
     }
-    return (
+    return loading ? <div className='loading'><ClipLoader color='#D78536' loading={loading} size={30} /></div>:(
         <div>
-            <input className='input-search' onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} type="text" placeholder='Nhập tên tỉnh/thành phố...' />
-            <span className='date'>Cập nhật ngày {moment().format('LL')}</span>
+            <div className='search-bar'>
+                <span className='date'>Cập nhật ngày {moment().format('LL')}</span>
+                <input className='input-search' onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} type="text" placeholder='Nhập tên tỉnh/thành phố...' />
+            </div>
             <table className="table center">
                 <thead className='table-dark'>
                     <tr>

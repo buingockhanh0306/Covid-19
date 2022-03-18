@@ -3,7 +3,7 @@ h1{
 }
 .input-search
 {
-    margin: 50px auto;
+    margin: 50px 30px;
     width: 300px;
     height: 40px;
     display: block;
@@ -17,4 +17,17 @@ h1{
     display: block;
     margin: 20px 40px;
     font-weight: 600;
+}
+.search-bar
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.loading
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
 }
