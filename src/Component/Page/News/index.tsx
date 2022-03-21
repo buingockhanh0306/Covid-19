@@ -14,9 +14,13 @@ function News() {
     }
     useEffect(() => { getNews() }, [])
 
+    const dateTime = (publishTime : number)=>
+    {
+        return new Date(publishTime*1000)
+    }
 
     const renderNews = () => {
-        return loading ? <div className='loading'><ClipLoader color='#D78536' loading={loading} size={30} /></div>:news.map((n) => (
+        return loading ? <div className='loading'><ClipLoader color='#D78536' loading={loading} size={60} /></div>:news.map((n) => (
                 <a href={n.share_url} target='_blank' className="card">
                     <div className="row g-0">
                         <div className="col-md-4">
@@ -26,7 +30,7 @@ function News() {
                             <div className="card-body">
                                 <h5 className="card-title">{n.title}</h5>
                                 <p className="card-text">{n.lead}</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                <p className="card-text"><small className="text-muted">{dateTime(n.publish_time).getDay() + 1 === 1 ? 'Chủ nhật' :`Thứ ${dateTime(n.publish_time).getDay()+1}`}, {dateTime(n.publish_time).toLocaleDateString('vi')}</small></p>
                             </div>
                         </div>
                     </div>

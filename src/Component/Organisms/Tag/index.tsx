@@ -19,7 +19,8 @@ export interface IProps {
         title: string,
         thumbnail_url: string,
         lead: string,
-        share_url: string
+        share_url: string,
+        publish_time: number
     }[]
     search: string
 }

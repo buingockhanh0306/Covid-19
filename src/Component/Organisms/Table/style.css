@@ -8,6 +8,8 @@ h1{
     height: 40px;
     display: block;
     outline: none;
+    border: none;
+    border-bottom: 3px solid cyan;
 }
 .center{
     text-align: center;
@@ -31,3 +33,5 @@ h1{
     align-items: center;
     height: 50vh;
 }
+
+

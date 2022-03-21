@@ -38,7 +38,7 @@ function Table() {
             </tr>
         ) : "")
     }
-    return loading ? <div className='loading'><ClipLoader color='#D78536' loading={loading} size={30} /></div>:(
+    return loading ? <div className='loading'><ClipLoader color='#D78536' loading={loading} size={60} /></div> :(
         <div>
             <div className='search-bar'>
                 <span className='date'>Cập nhật ngày {moment().format('LL')}</span>
