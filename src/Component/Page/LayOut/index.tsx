@@ -4,7 +4,7 @@ import Footer from '../../Organisms/Footer'
 import Navbar from '../../Organisms/Navbar'
 import './style.css'
 
-function Layout() {
+function Layout(): JSX.Element {
   return (
     <div>
       <Navbar />

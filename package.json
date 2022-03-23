@@ -27,10 +27,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .js,.tsx,.css src/",
-    "lint:fix": "eslint --fix .js,.tsx,.css src/",
-    "prettier": "prettier --check \"src/**/(**.jsx|*.js|*.scss|*.css)\"",
-    "prettier:fix": "prettier --write \"src/**/(**.jsx|*.js|*.scss|*.css)\""
+    "lint": "eslint --ext ts,tsx src/",
+    "lint:fix": "eslint --fix --ext ts,tsx src/",
+    "prettier": "prettier --check \"src/**/(**.jsx|*.js|*.scss|*.css|*.tsx)\"",
+    "prettier:fix": "prettier --fix --write \"src/**/(**.jsx|*.js|*.scss|*.css|*.tsx)\""
   },
   "eslintConfig": {
     "extends": [

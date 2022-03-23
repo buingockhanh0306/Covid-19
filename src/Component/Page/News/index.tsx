@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import ClipLoader from 'react-spinners/ClipLoader'
+// import { useNavigate } from 'react-router-dom'
 
 interface INewsProps {
   news: {
@@ -43,8 +44,8 @@ function News(): JSX.Element {
         <ClipLoader color="#D78536" loading={loading} size={60} />
       </div>
     ) : (
-      news.map(n => (
-        <a href={n.share_url} target="_blank" className="card" rel="noreferrer">
+      news.map((n: INewsProps['new'], index: number) => (
+        <a key={index} href={n.share_url} target="_blank" className="card" rel="noreferrer">
           <div className="row g-0">
             <div className="col-md-4">
               <img src={n.thumbnail_url} className="img-fluid rounded-start" alt="API error" />
