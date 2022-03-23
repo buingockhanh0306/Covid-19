@@ -1,4 +1,4 @@
-import { JsxElement } from 'typescript'
+import React from 'react'
 import './App.css'
 import Home from './Component/Page/Home'
 
