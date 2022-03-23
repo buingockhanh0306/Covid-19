@@ -1,72 +1,61 @@
-
-.about-text{
-    text-align: justify;
+.about-text {
+  text-align: justify;
 }
-.about-arr
-{
-    margin-top: 30px;
+.about-arr {
+  margin-top: 30px;
 }
-.about-img img{
-    margin-left: 50px;
+.about-img img {
+  margin-left: 50px;
 }
-.dirc
-{
-    flex-direction: row-reverse;
+.dirc {
+  flex-direction: row-reverse;
 }
-.bgr{
-    background-color: #999;
+.bgr {
+  background-color: #999;
 }
-.about-heading{
-    text-align: center;
-    margin: 50px 0;
+.about-heading {
+  text-align: center;
+  margin: 50px 0;
 }
-.contact-item{
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
-.contact-item i{
-    width: 30px;
-    color: rgb(64, 113, 248);
+.contact-item i {
+  width: 30px;
+  color: rgb(64, 113, 248);
 }
-.about-text input
-{
-    width: 100%;
-    height: 40px;
-    padding: 0 10px;
-    outline: none;
+.about-text input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
 }
-.message
-{
-    margin-top: 20px;
+.message {
+  margin-top: 20px;
 }
-.input-row1
-{
-    margin-top: 20px;
+.input-row1 {
+  margin-top: 20px;
 }
-.send
-{
-    background-color: #000;
-    color: #fff;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    margin-top: 20px;
+.send {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  margin-top: 20px;
 }
-.border
-{
-    border-radius: 20px;
+.border {
+  border-radius: 20px;
 }
 
-
-.contact{
-    margin: 50px 0;
+.contact {
+  margin: 50px 0;
 }
-.contact-text
-{
-    text-align: justify;
+.contact-text {
+  text-align: justify;
 }
-.contact-img
-{
-    width: 100%;
+.contact-img {
+  width: 100%;
 }

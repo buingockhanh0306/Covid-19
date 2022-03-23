@@ -15,6 +15,7 @@
     "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.16.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-spinners": "^0.11.0",
@@ -25,7 +26,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint .js,.tsx,.css src/",
+    "lint:fix": "eslint --fix .js,.tsx,.css src/",
+    "prettier": "prettier --check \"src/**/(**.jsx|*.js|*.scss|*.css)\"",
+    "prettier:fix": "prettier --write \"src/**/(**.jsx|*.js|*.scss|*.css)\""
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +49,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0"
   }
 }

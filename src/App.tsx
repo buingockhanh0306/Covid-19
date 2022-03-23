@@ -1,12 +1,13 @@
-import './App.css';
-import Home from './Component/Page/Home';
+import { JsxElement } from 'typescript'
+import './App.css'
+import Home from './Component/Page/Home'
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="container-fluid">
-        <Home/>
+      <Home />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
