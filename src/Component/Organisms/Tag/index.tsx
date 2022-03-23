@@ -29,7 +29,7 @@ function Tag(): JSX.Element {
   }, [])
 
   const renderCovid: () => JSX.Element = () => (
-    <div className="row justify-content-center">
+    <div className="row justify-content-center over">
       <div className="col-md-3 col-sm-12 tag bg-warning bg-gradient">
         <p className="title">Tổng số ca nhiễm</p>
         <span className="number">{numberWithCommas(covid?.infected || 0)}</span>

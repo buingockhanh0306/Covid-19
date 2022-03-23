@@ -45,7 +45,9 @@ function Table(): JSX.Element {
     return covid.map((cv: ITableProps['cv'], index: number) =>
       cv.name.toLowerCase().includes(search.toLowerCase().trim(), 0) ? (
         <tr key={index}>
-          <th scope="row">{index + 1}</th>
+          <th className="pc" scope="row">
+            {index + 1}
+          </th>
           <td>{cv.name}</td>
           <td>{numberWithCommas(cv.cases)}</td>
           <td>{numberWithCommas(cv.death)}</td>
@@ -74,7 +76,9 @@ function Table(): JSX.Element {
       <table className="table center">
         <thead className="table-dark">
           <tr>
-            <th scope="col">STT</th>
+            <th className="pc" scope="col">
+              STT
+            </th>
             <th scope="col">Tỉnh/Thành phố</th>
             <th scope="col">Số ca nhiễm</th>
             <th scope="col">Số ca không qua khỏi</th>

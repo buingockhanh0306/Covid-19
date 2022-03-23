@@ -4,8 +4,8 @@ import './style.css'
 function Contact(): JSX.Element {
   return (
     <div className="container">
-      <div className="row contact">
-        <div className="col contact-text">
+      <div className="row contact contact-mobile">
+        <div className="col-md-6 col-sm-12 contact-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde optio architecto eligendi placeat doloremque!
           Quod earum aspernatur recusandae cupiditate nemo inventore quos officiis, voluptatum autem eos, quam, debitis
           illum doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, voluptas. Ratione labore eum
@@ -16,13 +16,13 @@ function Contact(): JSX.Element {
           ad necessitatibus iure vitae molestias? Iste harum sapiente omnis quibusdam. Ipsam animi impedit enim expedita
           quia!
         </div>
-        <div className="col">
+        <div className="col-md-6 col-sm-12">
           <img className="contact-img" src="assets/images/about.jpg" alt="" />
         </div>
       </div>
 
       <div className="row contact">
-        <div className="col-md-6">
+        <div className="col-md-6 col-sm-12">
           <img className="contact-img" src="assets/images/about2.jpg" alt="" />
         </div>
         <div className="col contact-text">
@@ -40,9 +40,11 @@ function Contact(): JSX.Element {
 
       <h2 className="about-heading">CONTACT</h2>
       <div className="row">
-        <div className="col-6 about-text">
+        <div className="col-md-6 col-sm-12 about-text">
           <div className="contact-item">
-            <i className="fa-solid fa-location-dot"></i>
+            <div className="contact-icon">
+              <i className="width-icon fa-solid fa-location-dot"></i>
+            </div>
             <span>07th Floor, Golden Field Building, 24 Nguyen Co Thach Street, Hanoi, Vietnam </span>
           </div>
           <div className="contact-item">
@@ -55,10 +57,10 @@ function Contact(): JSX.Element {
           </div>
 
           <div className="row">
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <input required className="input-row1" type="text" placeholder="Name" />
             </div>
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <input required className="input-row1" type="text" placeholder="Email" />
             </div>
           </div>
@@ -69,7 +71,7 @@ function Contact(): JSX.Element {
             SEND
           </button>
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-sm-12">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.942817604326!2d105.7634631144075!3d21.034973892943217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b93c73ca9d%3A0x210784911132ebe!2zMjQgUGjhu5EgTmd1eeG7hW4gQ8ahIFRo4bqhY2gsIE3hu7kgxJDDrG5oLCBU4burIExpw6ptLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1645084273523!5m2!1svi!2s"
             width={600}

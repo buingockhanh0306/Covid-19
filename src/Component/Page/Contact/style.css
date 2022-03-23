@@ -26,6 +26,10 @@
   width: 30px;
   color: rgb(64, 113, 248);
 }
+.contact-icon {
+  display: block;
+  width: 30px;
+}
 .about-text input {
   width: 100%;
   height: 40px;
@@ -52,10 +56,28 @@
 
 .contact {
   margin: 50px 0;
+  flex-wrap: wrap;
 }
 .contact-text {
   text-align: justify;
 }
 .contact-img {
   width: 100%;
+}
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+/* Mobile */
+@media only screen and (max-width: 46.1875em) {
+  .contact-mobile {
+    flex-direction: column-reverse;
+  }
+  iframe {
+    width: 100%;
+    height: 200px;
+  }
+  .send {
+    margin-bottom: 20px;
+    float: right;
+  }
 }
