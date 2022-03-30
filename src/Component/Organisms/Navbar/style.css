@@ -3,9 +3,17 @@
   align-items: center;
   justify-content: center;
 }
+.heading {
+  color: #000;
+  text-decoration: none;
+}
+.heading:hover {
+  color: #000;
+}
 .header-icon {
 }
 .heading-navbar {
+  text-align: center;
 }
 .content {
   /* margin-top: 160px; */
@@ -19,6 +27,9 @@
 }
 .navbar {
   z-index: 1;
+}
+.active {
+  color: blue;
 }
 .nav-menu {
   margin: 0px auto;

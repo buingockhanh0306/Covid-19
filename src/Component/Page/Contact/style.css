@@ -57,6 +57,7 @@
 .contact {
   margin: 50px 0;
   flex-wrap: wrap;
+  align-items: center;
 }
 .contact-text {
   text-align: justify;

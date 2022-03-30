@@ -1,22 +1,33 @@
 {
-  "extends": ["react-app", "prettier", "plugin:react/recommended"],
-  "plugins": ["react", "prettier", "@typescript-eslint"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "react-app/jest"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": [
-      "warn",
-      {
-        "arrowParens": "avoid",
-        "semi": false,
-        "trailingComma": "none",
-        "endOfLine": "lf",
-        "tabWidth": 2,
-        "useTabs": false,
-        "singleQuote": true,
-        "printWidth": 120,
-        "jsxSingleQuote": false,
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error"]
-      }
-    ]
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-extra-semi": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    // "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-empty-interface": "off"
+    // "@typescript-eslint/no-duplicates": "error"
   }
 }

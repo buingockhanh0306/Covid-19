@@ -1,34 +1,33 @@
-import React, { useState, useEffect, ChangeEvent } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.css'
 import covidAPI from '../../../axios/covidAPI'
 import 'moment/locale/vi'
 import moment from 'moment'
 import { numberWithCommas } from '../Tag'
 import ClipLoader from 'react-spinners/ClipLoader'
-import { JsxElement } from 'typescript'
 
 moment.locale('vi')
 
 interface ITableProps {
-  detail: {
-    name: string
-    cases: number
-    death: number
-    casesToday: number
-  }[]
-  cv: {
+  covid: {
     name: string
     cases: number
     death: number
     casesToday: number
   }
   search: string
-}
-// type Detail = Omit<IProps, "search" | "total">
+  setSearch: (search: string) => void
+  setCovid: (value: ITableProps['covid'][]) => void
 
-function Table(): JSX.Element {
-  const [covid, setCovid] = useState<ITableProps['detail']>([])
-  const [search, setSearch] = useState<ITableProps['search']>('')
+  loading: boolean
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+type Search = Pick<ITableProps, 'search'>
+type Covid = Pick<ITableProps, 'covid'>
+
+const Table: React.FC = () => {
+  const [covid, setCovid] = useState<Covid['covid'][]>([])
+  const [search, setSearch] = useState<Search['search']>('')
   const [loading, setLoading] = useState<boolean>(true)
 
   const getCovids: () => Promise<void> = async () => {
@@ -42,7 +41,7 @@ function Table(): JSX.Element {
   }, [])
 
   const renderCovid: () => ('' | JSX.Element)[] = () => {
-    return covid.map((cv: ITableProps['cv'], index: number) =>
+    return covid.map((cv: ITableProps['covid'], index: number) =>
       cv.name.toLowerCase().includes(search.toLowerCase().trim(), 0) ? (
         <tr key={index}>
           <th className="pc" scope="row">
@@ -68,7 +67,7 @@ function Table(): JSX.Element {
         <span className="date">Cập nhật ngày {moment().format('LL')}</span>
         <input
           className="input-search"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+          onChange={e => setSearch(e.target.value)}
           type="text"
           placeholder="Nhập tên tỉnh/thành phố..."
         />

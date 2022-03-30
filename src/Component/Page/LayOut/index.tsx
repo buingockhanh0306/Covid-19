@@ -3,8 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Footer from '../../Organisms/Footer'
 import Navbar from '../../Organisms/Navbar'
 import './style.css'
-
-function Layout(): JSX.Element {
+const LayOut: React.FC = () => {
   return (
     <div>
       <Navbar />
@@ -12,11 +11,11 @@ function Layout(): JSX.Element {
         <Outlet />
       </div>
       <Footer />
-      <a href="#" className="toTop">
+      <a href="/" className="toTop">
         <i className="fa-solid fa-arrow-up"></i>
       </a>
     </div>
   )
 }
 
-export default Layout
+export default LayOut

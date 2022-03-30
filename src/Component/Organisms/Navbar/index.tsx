@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './style.css'
 
-function Navbar(): JSX.Element {
+const Navbar: React.FC = () => {
   window.addEventListener('scroll', () => {
-    let toTop: HTMLInputElement | null = document.querySelector<HTMLInputElement>('.toTop')
+    const toTop: HTMLInputElement | null = document.querySelector<HTMLInputElement>('.toTop')
     if (window.pageYOffset >= 300) {
       toTop?.classList.add('toTop-active')
     } else {
@@ -15,7 +15,9 @@ function Navbar(): JSX.Element {
   return (
     <>
       <div className="heading-navbar">
-        <h5 className="heading">Covid 19</h5>
+        <Link to="/" className="heading">
+          Covid 19
+        </Link>
         <div className="navbar">
           <div className="nav-menu">
             <Link className="navbar-link" to="/">
@@ -32,6 +34,10 @@ function Navbar(): JSX.Element {
 
             <Link className="navbar-link" to="/contact">
               Liên hệ
+            </Link>
+
+            <Link className="navbar-link" to="/chakra">
+              ChakraUI
             </Link>
           </div>
         </div>

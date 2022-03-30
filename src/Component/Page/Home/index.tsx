@@ -2,7 +2,7 @@ import React from 'react'
 import Table from '../../Organisms/Table'
 import Tag from '../../Organisms/Tag'
 
-function Home(): JSX.Element {
+const Home: React.FC = () => {
   return (
     <div>
       <Tag />

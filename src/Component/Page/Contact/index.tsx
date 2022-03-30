@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-function Contact(): JSX.Element {
+const Contact: React.FC = () => {
   return (
     <div className="container">
       <div className="row contact contact-mobile">
@@ -25,7 +25,7 @@ function Contact(): JSX.Element {
         <div className="col-md-6 col-sm-12">
           <img className="contact-img" src="assets/images/about2.jpg" alt="" />
         </div>
-        <div className="col contact-text">
+        <div className="col-md-6 col-sm-12 contact-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde optio architecto eligendi placeat doloremque!
           Quod earum aspernatur recusandae cupiditate nemo inventore quos officiis, voluptatum autem eos, quam, debitis
           illum doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, voluptas. Ratione labore eum
