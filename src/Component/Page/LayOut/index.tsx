@@ -11,7 +11,7 @@ const LayOut: React.FC = () => {
         <Outlet />
       </div>
       <Footer />
-      <a href="/" className="toTop">
+      <a href="#" className="toTop">
         <i className="fa-solid fa-arrow-up"></i>
       </a>
     </div>
