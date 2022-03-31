@@ -5,8 +5,7 @@ import 'moment/locale/vi'
 import moment from 'moment'
 import { numberWithCommas } from '../Tag'
 import ClipLoader from 'react-spinners/ClipLoader'
-
-moment.locale('vi')
+import { useTranslation } from 'react-i18next'
 
 interface ITableProps {
   covid: {
@@ -29,6 +28,8 @@ const Table: React.FC = () => {
   const [covid, setCovid] = useState<Covid['covid'][]>([])
   const [search, setSearch] = useState<Search['search']>('')
   const [loading, setLoading] = useState<boolean>(true)
+  const { t, i18n } = useTranslation()
+  moment.locale(`${t('language')}`)
 
   const getCovids: () => Promise<void> = async () => {
     const covids = await covidAPI.getAll()
@@ -64,24 +65,26 @@ const Table: React.FC = () => {
   ) : (
     <div>
       <div className="search-bar">
-        <span className="date">Cập nhật ngày {moment().format('LL')}</span>
+        <span className="date">
+          {t('updateDate')} {moment().format('LL')}
+        </span>
         <input
           className="input-search"
           onChange={e => setSearch(e.target.value)}
           type="text"
-          placeholder="Nhập tên tỉnh/thành phố..."
+          placeholder={`${t('search')}`}
         />
       </div>
       <table className="table center">
         <thead className="table-dark">
           <tr>
             <th className="pc" scope="col">
-              STT
+              {t('number')}
             </th>
-            <th scope="col">Tỉnh/Thành phố</th>
-            <th scope="col">Số ca nhiễm</th>
-            <th scope="col">Số ca không qua khỏi</th>
-            <th scope="col">Số ca mắc mới trong ngày</th>
+            <th scope="col">{t('name')}</th>
+            <th scope="col">{t('cases')}</th>
+            <th scope="col">{t('deaths')}</th>
+            <th scope="col">{t('casesToday')}</th>
           </tr>
         </thead>
         <tbody>{renderCovid()}</tbody>

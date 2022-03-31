@@ -1,0 +1,23 @@
+{
+  "home": "Home",
+  "information": "Information",
+  "news": "News",
+  "contact": "Contact",
+  "infected": "Infected",
+  "recovered": "Recovered",
+  "deceased": "Deceased",
+  "treated": "Treated",
+  "search": "Search...",
+  "name": "Name",
+  "cases": "Cases",
+  "deaths": "Deaths",
+  "casesToday": "Cases Today",
+  "language": "en",
+  "updateDate": "Updated",
+  "number": "Number",
+  "address": "07th Floor, Golden Field Building, 24 Nguyen Co Thach Street, Hanoi, Vietnam",
+  "phone": "Phone",
+  "fullname": "Name",
+  "message": "Message",
+  "send": "Send"
+}

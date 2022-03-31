@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './style.css'
+import './style.scss'
+import { useTranslation } from 'react-i18next'
 
 const Navbar: React.FC = () => {
   window.addEventListener('scroll', () => {
@@ -11,29 +12,42 @@ const Navbar: React.FC = () => {
       toTop?.classList.remove('toTop-active')
     }
   })
+  const { t, i18n } = useTranslation()
+
+  const handleChangeLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+  }
 
   return (
     <>
       <div className="heading-navbar">
+        <>
+          <button onClick={() => handleChangeLanguage('vn')} className="switch">
+            VN
+          </button>
+          <button onClick={() => handleChangeLanguage('en')} className="switch">
+            EN
+          </button>
+        </>
         <Link to="/" className="heading">
           Covid 19
         </Link>
         <div className="navbar">
           <div className="nav-menu">
             <Link className="navbar-link" to="/">
-              Thông tin ca bệnh
+              {t('home')}
             </Link>
 
             <Link className="navbar-link" to="/information">
-              Phòng chống dịch
+              {t('information')}
             </Link>
 
             <Link className="navbar-link" to="/news">
-              Tin tức
+              {t('news')}
             </Link>
 
             <Link className="navbar-link" to="/contact">
-              Liên hệ
+              {t('contact')}
             </Link>
 
             <Link className="navbar-link" to="/chakra">

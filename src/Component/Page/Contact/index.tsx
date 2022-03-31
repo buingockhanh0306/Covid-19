@@ -1,7 +1,9 @@
 import React from 'react'
 import './style.css'
+import { useTranslation } from 'react-i18next'
 
 const Contact: React.FC = () => {
+  const { t, i18n } = useTranslation()
   return (
     <div className="container">
       <div className="row contact contact-mobile">
@@ -38,18 +40,18 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      <h2 className="about-heading">CONTACT</h2>
+      <h2 className="about-heading">{t('contact').toUpperCase()}</h2>
       <div className="row">
         <div className="col-md-6 col-sm-12 about-text">
           <div className="contact-item">
             <div className="contact-icon">
               <i className="width-icon fa-solid fa-location-dot"></i>
             </div>
-            <span>07th Floor, Golden Field Building, 24 Nguyen Co Thach Street, Hanoi, Vietnam </span>
+            <span>{t('address')}</span>
           </div>
           <div className="contact-item">
             <i className="fa-solid fa-phone"></i>
-            <span>Phone: +(84).981.415.813</span>
+            <span>{t('phone')}: +(84).981.415.813</span>
           </div>
           <div className="contact-item">
             <i className="fa-solid fa-envelope"></i>
@@ -58,17 +60,17 @@ const Contact: React.FC = () => {
 
           <div className="row">
             <div className="col-md-6 col-sm-12">
-              <input required className="input-row1" type="text" placeholder="Name" />
+              <input required className="input-row1" type="text" placeholder={`${t('fullname')}`} />
             </div>
             <div className="col-md-6 col-sm-12">
-              <input required className="input-row1" type="text" placeholder="Email" />
+              <input required className="input-row1" type="email" placeholder="Email" />
             </div>
           </div>
 
-          <input required className="message" type="text" placeholder="Message" />
+          <input required className="message" type="text" placeholder={`${t('message')}`} />
 
           <button type="submit" className="send">
-            SEND
+            {t('send')}
           </button>
         </div>
         <div className="col-md-6 col-sm-12">

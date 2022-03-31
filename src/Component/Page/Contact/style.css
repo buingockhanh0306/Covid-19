@@ -16,6 +16,8 @@
 .about-heading {
   text-align: center;
   margin: 50px 0;
+  font-weight: 500;
+  font-size: 24px;
 }
 .contact-item {
   display: flex;
@@ -38,9 +40,11 @@
 }
 .message {
   margin-top: 20px;
+  border: 1px solid #333;
 }
 .input-row1 {
   margin-top: 20px;
+  border: 1px solid #333;
 }
 .send {
   background-color: #000;

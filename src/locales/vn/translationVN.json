@@ -1,0 +1,23 @@
+{
+  "home": "Trang chủ",
+  "information": "Thông tin dịch bệnh",
+  "news": "Tin tức",
+  "contact": "Liên hệ",
+  "infected": "Tổng số ca nhiểm",
+  "recovered": "Tổng số ca đã phục hồi",
+  "deceased": "Tổng số ca không qua khỏi",
+  "treated": "Tổng số ca đang điều trị",
+  "search": "Nhập tên tỉnh/thành phố...",
+  "name": "Tỉnh/Thành phố",
+  "cases": "Số ca nhiễm",
+  "deaths": "Số ca tử vong",
+  "casesToday": "Số ca mắc mới trong ngày",
+  "language": "vi",
+  "updateDate": "Cập nhật lần cuối vào ngày",
+  "number": "STT",
+  "address": "Tầng 7, Tòa nhà Golden Field, 24 Nguyễn Cơ Thạch, quận Nam Từ Liêm, Hà Nội",
+  "phone": "Điện thoại",
+  "fullname": "Họ tên",
+  "message": "Nội dung",
+  "send": "Gửi"
+}

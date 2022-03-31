@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 import { Button, Input, ButtonGroup, Stack, Grid, GridItem } from '@chakra-ui/react'
 
 const ChakraUI: React.FC = () => {
-  const [value, setValue] = useState<string>('')
-  const handleClick: () => void = () => {
-    console.log(value)
-  }
-
   return (
     <Grid templateColumns="repeat(4, 1fr)" gap={6}>
       <GridItem flexDirection="column" display="flex" justifyContent="center" alignItems="center" w="100%">

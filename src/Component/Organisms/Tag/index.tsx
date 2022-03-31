@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
 import covidAPI from '../../../axios/covidAPI'
+import { useTranslation } from 'react-i18next'
 
 interface ITagProps {
   infected: number
@@ -18,6 +19,7 @@ export function numberWithCommas(x: number): string {
 
 const Tag: React.FC = () => {
   const [covid, setCovid] = useState<ITagProps>()
+  const { t, i18n } = useTranslation()
 
   const getCovids: () => Promise<void> = async () => {
     const covids = await covidAPI.getAll()
@@ -31,23 +33,23 @@ const Tag: React.FC = () => {
   const renderCovid: () => JSX.Element = () => (
     <div className="row justify-content-center over">
       <div className="col-md-3 col-sm-12 tag bg-warning bg-gradient">
-        <p className="title">Tổng số ca nhiễm</p>
+        <p className="title">{t('infected')}</p>
         <span className="number">{numberWithCommas(covid?.infected || 0)}</span>
       </div>
 
       <div className="col-md-3 col-sm-12 tag bg-success bg-gradient">
-        <p className="title">Tổng số ca đã phục hồi</p>
+        <p className="title">{t('recovered')}</p>
         <span className="number">{numberWithCommas(covid?.recovered || 0)}</span>
       </div>
 
       <div className="col-md-3 col-sm-12 tag bg-danger bg-gradient">
-        <p className="title">Tổng số ca không qua khỏi</p>
+        <p className="title">{t('deceased')}</p>
         <span className="number">{numberWithCommas(covid?.deceased || 0)}</span>
       </div>
 
       <div className="col-md-3 col-sm-12 tag bg-info bg-gradient">
-        <p className="title">Tổng số ca đang điều trị</p>
-        <span className="number">{numberWithCommas(covid?.deceased || 0)}</span>
+        <p className="title">{t('treated')}</p>
+        <span className="number">{numberWithCommas(covid?.treated || 0)}</span>
       </div>
     </div>
   )

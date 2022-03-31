@@ -63,7 +63,7 @@ function Information(): JSX.Element {
               </small>
             </div>
           </div>
-          <News />
+          {/* <News /> */}
         </div>
       ))
     )
