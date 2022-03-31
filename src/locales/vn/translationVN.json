@@ -11,7 +11,7 @@
   "name": "Tỉnh/Thành phố",
   "cases": "Số ca nhiễm",
   "deaths": "Số ca tử vong",
-  "casesToday": "Số ca mắc mới trong ngày",
+  "casesToday": "Mắc mới trong ngày",
   "language": "vi",
   "updateDate": "Cập nhật lần cuối vào ngày",
   "number": "STT",

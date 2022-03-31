@@ -10,12 +10,22 @@
 .heading:hover {
   color: #000;
 }
-.header-icon {
-}
+
 .heading-navbar {
   text-align: center;
   .switch {
     border: 1px solid #333;
+  }
+  .header-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 .content {
