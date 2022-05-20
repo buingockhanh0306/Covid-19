@@ -8,6 +8,7 @@ function App(): JSX.Element {
       <Home />
     </div>
   )
+  //
 }
 
 export default App
