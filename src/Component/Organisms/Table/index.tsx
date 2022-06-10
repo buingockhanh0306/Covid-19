@@ -3,9 +3,9 @@ import './style.css'
 import covidAPI from '../../../axios/covidAPI'
 import 'moment/locale/vi'
 import moment from 'moment'
-import { numberWithCommas } from '../Tag'
 import ClipLoader from 'react-spinners/ClipLoader'
 import { useTranslation } from 'react-i18next'
+import {numberWithCommas} from "../../../libs/numberWithCommas";
 
 interface ITableProps {
   covid: {
@@ -28,16 +28,15 @@ const Table: React.FC = () => {
   const [covid, setCovid] = useState<Covid['covid'][]>([])
   const [search, setSearch] = useState<Search['search']>('')
   const [loading, setLoading] = useState<boolean>(true)
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   moment.locale(`${t('language')}`)
 
-  const getCovids: () => Promise<void> = async () => {
-    const covids = await covidAPI.getAll()
-    setCovid(covids.data.detail)
-    setLoading(false)
-  }
-
   useEffect(() => {
+    const getCovids: () => Promise<void> = async () => {
+      const covids = await covidAPI.getAll()
+      setCovid(covids.data.detail)
+      setLoading(false)
+    }
     getCovids()
   }, [])
 

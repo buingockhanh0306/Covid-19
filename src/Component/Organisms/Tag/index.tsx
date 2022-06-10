@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './style.css'
 import covidAPI from '../../../axios/covidAPI'
 import { useTranslation } from 'react-i18next'
+import {numberWithCommas} from "../../../libs/numberWithCommas";
 
 interface ITagProps {
   infected: number
@@ -10,16 +11,9 @@ interface ITagProps {
   treated: number
 }
 
-export function numberWithCommas(x: number): string {
-  let n: string = x.toString()
-  const pattern = /(-?\d+)(\d{3})/
-  while (pattern.test(n)) n = n.replace(pattern, '$1.$2')
-  return n
-}
-
 const Tag: React.FC = () => {
   const [covid, setCovid] = useState<ITagProps>()
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const getCovids: () => Promise<void> = async () => {
     const covids = await covidAPI.getAll()

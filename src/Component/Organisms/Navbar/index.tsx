@@ -1,27 +1,38 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState} from 'react'
+import {Link} from 'react-router-dom'
 import './style.scss'
 import { useTranslation } from 'react-i18next'
 import { Switch } from '@chakra-ui/react'
 import { MdLocationPin } from 'react-icons/md'
 
 const Navbar: React.FC = () => {
-  window.addEventListener('scroll', () => {
-    const toTop: HTMLInputElement | null = document.querySelector<HTMLInputElement>('.toTop')
-    if (window.pageYOffset >= 300) {
-      toTop?.classList.add('toTop-active')
-    } else {
-      toTop?.classList.remove('toTop-active')
-    }
-  })
   const { t, i18n } = useTranslation()
-
   const [value, setValue] = useState('en')
 
   const handleChangeLanguage = (language: string) => {
-    language == 'vn' ? setValue('en') : setValue('vn')
+    language === 'vn' ? setValue('en') : setValue('vn')
     i18n.changeLanguage(language)
   }
+
+  const Links = [
+    {
+      to: "/",
+      element: t('home')
+    },
+    {
+      to: "/information",
+      element: t('information')
+    },
+    {
+      to: "/news",
+      element: t('news')
+    },
+    {
+      to: "/contact",
+      element: t('contact')
+    }
+  ]
+
 
   return (
     <>
@@ -42,25 +53,17 @@ const Navbar: React.FC = () => {
         </div>
         <div className="navbar">
           <div className="nav-menu">
-            <Link className="navbar-link" to="/">
-              {t('home')}
-            </Link>
-
-            <Link className="navbar-link" to="/information">
-              {t('information')}
-            </Link>
-
-            <Link className="navbar-link" to="/news">
-              {t('news')}
-            </Link>
-
-            <Link className="navbar-link" to="/contact">
-              {t('contact')}
-            </Link>
-
-            {/* <Link className="navbar-link" to="/chakra">
-              ChakraUI
-            </Link> */}
+            {Links.map((link, index) =>
+              (
+                <Link
+                  key={index}
+                  className="navbar-link"
+                  to={link.to}
+                >
+                    {link.element}
+                </Link>
+              ))
+            }
           </div>
         </div>
       </div>
